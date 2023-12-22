@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React, { useState, useEffect } from 'react';
+import Loader from './components/Loader.jsx';
+import Home from './components/Home.jsx';
+import Navbar from './components/Navbar.jsx';
+import './index.css';
 
 function App() {
+  console.log('App.js - Renderizado');
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simula una carga de recursos (puedes adaptarlo a tus necesidades)
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Simula 2 segundos de carga
+
+    // Limpia el timeout al desmontar el componente para evitar fugas de memoria
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    console.log('App.js - Loader unmounted');
+    // Resto de tu lógica
+  }, [loading]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <Home />
+          <Navbar />
+          {/* Resto de tu contenido */}
+        </>
+      )}
     </div>
   );
 }

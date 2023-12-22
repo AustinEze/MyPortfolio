@@ -1,13 +1,96 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: 'Roobert';
+  src: url('../public/fonts/RoobertTRIAL-Medium.woff2') format('woff2'),
+       url('../public/fonts/RoobertTRIAL-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal-Thin';
+  src: url('../public/fonts/PPNeueMontreal-Thin.woff2') format('woff2'),
+       url('../public/fonts/PPNeueMontreal-Thin.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 30px;
+  font-family: 'Roobert', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #000;
+  border: 1px solid #dddddd; /* Añadimos un borde alrededor de la página */
+  padding: 20px; /* Añadimos un margen interno para cambiar el tema de la página */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  background-color: transparent;
+  padding: 10px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.link {
+  transition: color 700ms;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 5px; 
+  margin: 6px;
+  font-size: 0.9em;
+}
+
+.link:hover {
+  color: #606060;
+}
+
+/* -------------------HOME PAGE CONTAINER----------------------*/
+
+.AM{
+  font-size: 2.5em;
+}
+
+.custom-home-container {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  margin: 20px;  
+}
+
+.custom-home-text {
+  font-family: 'PPNeueMontreal-Thin';
+  color: white;  
+}
+
+.DD-Container{
+  display: flex;
+  /* justify-content: center; */
+}
+
+.DD {
+  margin-top: 5px;
+  font-size: 1.2em;
+}
+
